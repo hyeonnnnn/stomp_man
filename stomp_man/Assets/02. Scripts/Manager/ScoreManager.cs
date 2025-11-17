@@ -31,6 +31,7 @@ public class ScoreManager : MonoBehaviour
         _currentScore += score;
 
         UpdateCurrentScoreUI();
+        UpdateBestScore();
     }
 
     private void Start()
@@ -40,12 +41,48 @@ public class ScoreManager : MonoBehaviour
 
     private void InitScore()
     {
-        _currentScoreTextUI.text = $"Score: {_currentScore:N0}";
-        _BestScoreTextUI.text = $"Best Score: {_bestScore:N0}";
+
+        LoadBestScore();
+        UpdateCurrentScoreUI();
+        UpdateBestScoreUI();
+    }
+
+    private void LoadBestScore()
+    {
+        SaveData loaded = SaveManager.Instance.Load();
+
+        if (loaded != null)
+        {
+            _bestScore = loaded.score;
+        }
+        else
+        {
+            _bestScore = 0;
+        }
     }
 
     private void UpdateCurrentScoreUI()
     {
         _currentScoreTextUI.text = $"Score: {_currentScore:N0}";
+    }
+
+    private void UpdateBestScore()
+    {
+        if (_currentScore > _bestScore)
+        {
+            _bestScore = _currentScore;
+            SaveBestScore();
+            UpdateBestScoreUI();
+        }
+    }
+
+    private void UpdateBestScoreUI()
+    {
+        _BestScoreTextUI.text = $"Best Score: {_bestScore:N0}";
+    }
+
+    private void SaveBestScore()
+    {
+        SaveManager.Instance.Save(_bestScore);
     }
 }
