@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class MoveComponent : MonoBehaviour
 {
-    [SerializeField] private float _speed = 1f;
+    private float _minOffset = 0.5f;
+    private float _maxOffset = 1f;
+    private float _speedOffset;
 
-    void Update()
+    private void Start()
+    {
+        _speedOffset = Random.Range(_minOffset, _maxOffset);
+    }
+
+    private void Update()
     {
         Move();
     }
 
     private void Move()
     {
-        transform.Translate(Vector3.left * _speed * Time.deltaTime);
+        transform.Translate(Vector3.left * (GameManager.Instance.CurrentGameSpeed + _speedOffset) * Time.deltaTime);
     }
 }

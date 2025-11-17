@@ -76,10 +76,12 @@ public class PlayerMove : MonoBehaviour
             _isHit = true;
             Hit(collision);
             IncreaseBounceForce(_increaseValue);
+            GameManager.Instance.IncreaseGameSpeed();
         }
         else
         {
             DecreaseBounceForce(_decreaseValue);
+            GameManager.Instance.DecreaseGameSpeed();
         }
     }
 
@@ -99,6 +101,7 @@ public class PlayerMove : MonoBehaviour
         if (_isHit == false)
         {
             DecreaseBounceForce(_decreaseValue);
+            GameManager.Instance.DecreaseGameSpeed();
         }
 
         Bounce();

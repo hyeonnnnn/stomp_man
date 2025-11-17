@@ -32,6 +32,11 @@ public class ScoreItem : MonoBehaviour
 
     private void Update()
     {
+        if (_isFlying == false)
+        {
+            transform.Translate(Vector3.left * GameManager.Instance.CurrentGameSpeed * Time.deltaTime);
+        }
+
         _timer += Time.deltaTime;
         if (_isFlying == false && _timer >= _coolTime)
         {

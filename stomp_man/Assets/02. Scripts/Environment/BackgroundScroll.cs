@@ -13,7 +13,7 @@ public class BackgroundScroll : MonoBehaviour
 
     [Header("속도 설정")]
     [SerializeField] private float _foregroundSpeed = 1f;
-    [SerializeField] private float _midgroundSpeed = 0.7f;
+    [SerializeField] private float _midgroundSpeed = 0.8f;
     [SerializeField] private float _backgroundSpeed = 0.5f;
     [SerializeField] private float _particleSpeed = 0.2f;
 
@@ -26,12 +26,14 @@ public class BackgroundScroll : MonoBehaviour
 
     private void Update()
     {
-        MoveLayer(_foreground, _foregroundSpeed);
-        MoveLayer(_midground, _midgroundSpeed);
-        MoveLayer(_background, _backgroundSpeed);
-        MoveLayer(_particle, _particleSpeed);
-        MoveLayer(_skyForeground, _foregroundSpeed);
-        MoveLayer(_skyParticle, _particleSpeed);
+        float speedMultiplier = GameManager.Instance.CurrentGameSpeed;
+
+        MoveLayer(_foreground, _foregroundSpeed * speedMultiplier);
+        MoveLayer(_midground, _midgroundSpeed * speedMultiplier);
+        MoveLayer(_background, _backgroundSpeed * speedMultiplier);
+        MoveLayer(_particle, _particleSpeed * speedMultiplier);
+        MoveLayer(_skyForeground, _foregroundSpeed * speedMultiplier);
+        MoveLayer(_skyParticle, _particleSpeed * speedMultiplier);
     }
 
     private void MoveLayer(GameObject[] layer, float speed)
@@ -43,15 +45,15 @@ public class BackgroundScroll : MonoBehaviour
 
         if (layer[0].transform.position.x <= -_spriteWidth)
         {
-            Vector3 lastPos = layer[2].transform.position;
-            lastPos.x += _spriteWidth;
+            Vector3 lastPosition = layer[2].transform.position;
+            lastPosition.x += _spriteWidth;
 
             GameObject first = layer[0];
             layer[0] = layer[1];
             layer[1] = layer[2];
             layer[2] = first;
             
-            layer[2].transform.position = lastPos;
+            layer[2].transform.position = lastPosition;
         }
     }
 }

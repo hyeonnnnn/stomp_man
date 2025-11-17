@@ -6,7 +6,6 @@ public class DestroyZone : MonoBehaviour
     {
         if(collision.CompareTag("Enemy") == true)
         {
-            Debug.Log("ªË¡¶");
             Destroy(collision.gameObject);
         }
     }
