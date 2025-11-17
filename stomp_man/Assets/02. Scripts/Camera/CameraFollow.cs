@@ -9,6 +9,8 @@ public class MainCameraController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_player == null) return;
+
         Vector3 targetPosition = new Vector3(_player.position.x, _player.position.y, transform.position.z);
 
         Vector3 _minBoundaryPosition = _minBoundary.transform.position;

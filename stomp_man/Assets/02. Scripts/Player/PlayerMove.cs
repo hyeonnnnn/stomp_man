@@ -31,6 +31,8 @@ public class PlayerMove : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private Color _originalColor;
 
+    [SerializeField] private Animator _animator;
+
 
     private Camera _camera;
 
@@ -60,6 +62,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) == true && _isStomp == false)
         {
             _isStomp = true;
+            _animator.SetTrigger("Stomp");
             _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, -_stompForce);
         }
     }
@@ -97,6 +100,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (_isDie == true) return;
         if (collision.collider.CompareTag("Ground") == false) return;
+        _animator.ResetTrigger("Jump");
 
         if (_isHit == false)
         {
@@ -106,9 +110,12 @@ public class PlayerMove : MonoBehaviour
         }
 
         Bounce();
+        
 
         _isHit = false;
         _isStomp = false;
+        
+        _animator.ResetTrigger("Stomp");
     }
 
     private void Bounce()
@@ -125,6 +132,7 @@ public class PlayerMove : MonoBehaviour
 
         _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, 0f);
         _rigidbody.AddForce(Vector2.up * _currentbounceForce, ForceMode2D.Impulse);
+        _animator.SetTrigger("Jump");
     }
 
     public void IncreaseBounceForce(float value)
@@ -159,8 +167,10 @@ public class PlayerMove : MonoBehaviour
     {
         if (_isDie) return;
         _isDie = true;
-
-        Debug.Log("죽었습니다.");
+        _animator.SetTrigger("Idle");
+        _animator.ResetTrigger("Stomp");
+        _animator.ResetTrigger("Jump");
+        Destroy(gameObject);
     }
 
 }

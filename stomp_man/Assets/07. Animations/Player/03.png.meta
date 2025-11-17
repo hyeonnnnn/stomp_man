@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: fda1d2939289ceb4894bfbfab4727a44
-AssetOrigin:
-  serializedVersion: 1
-  productId: 245855
-  packageName: The Legend of Slim
-  packageVersion: 1.0
-  assetPath: Assets/The Legend of Slim/07 RPG/King/03.png
-  uploadId: 569268
+guid: a8ed7aacf50818d4bb86a972c41de4c0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
