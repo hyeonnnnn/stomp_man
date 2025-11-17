@@ -125,15 +125,12 @@ public class PlayerMove : MonoBehaviour
 
     public void IncreaseBounceForce(float value)
     {
-        Debug.Log("점프력 증가");
-        
         _currentbounceForce *= value;
         _currentbounceForce = Mathf.Min(_maxBounceForce, _currentbounceForce);
     }
 
     public void DecreaseBounceForce(float value)
     {
-        Debug.Log("점프력 감소");
         _currentbounceForce *= value;
         
         if (_currentbounceForce <= _minBounceForce)

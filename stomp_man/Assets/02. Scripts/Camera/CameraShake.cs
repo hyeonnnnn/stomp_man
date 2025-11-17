@@ -3,18 +3,15 @@ using System.Collections;
 
 public class CameraShake : MonoBehaviour
 {
-    [SerializeField] private float _shakeAmount = 0.2f;
     [SerializeField] private float _shakeTime = 0.4f;
 
     private Vector3 _originalLocalPos;
 
-    private void Awake()
-    {
-        _originalLocalPos = transform.localPosition;
-    }
 
     public void Play(float shakeAmount)
     {
+        _originalLocalPos = transform.localPosition;
+
         StopAllCoroutines();
         StartCoroutine(Shake(shakeAmount));
     }

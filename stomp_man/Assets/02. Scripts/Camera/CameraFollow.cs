@@ -1,16 +1,19 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class MainCameraController : MonoBehaviour
 {
-    [SerializeField] private Transform _player;
-    [SerializeField] private float _smoothTime = 0.12f;
+    [SerializeField] Transform player;
+    [SerializeField] float smoothing = 0.2f;
+    [SerializeField] Vector2 minCameraBoundary;
+    [SerializeField] Vector2 maxCameraBoundary;
 
-    private Vector3 _velocity = Vector3.zero;
-
-    private void LateUpdate()
+    private void FixedUpdate()
     {
-        Vector3 targetPosition = new Vector3(transform.position.x, _player.position.y, transform.position.z);
+        Vector3 targetPosition = new Vector3(player.position.x, player.position.y, transform.position.z);
 
-        transform.position = Vector3.SmoothDamp( transform.position, targetPosition, ref _velocity, _smoothTime);
+        targetPosition.x = Mathf.Clamp(targetPosition.x, minCameraBoundary.x, maxCameraBoundary.x);
+        targetPosition.y = Mathf.Clamp(targetPosition.y, minCameraBoundary.y, maxCameraBoundary.y);
+
+        transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing);
     }
 }
