@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private float _gameStartSpeed = 15f;
     private float _currentGameSpeed;
     private float _minGameSpeed = 0.2f;
+    private float _maxGameSpeed = 40f;
     private float _gameSpeedIncreaseValue = 0.1f;
     private float _gameSpeedIncreaseMultipler = 1.15f;
     private float _gameSpeedDecreaseMultipler = 0.6f;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     private bool _isGameOver = false;
     public bool IsGameOver => _isGameOver;
+    public float MaxGameSpeed => _maxGameSpeed;
 
 
     public float CurrentGameSpeed => _currentGameSpeed;
@@ -62,5 +64,6 @@ public class GameManager : MonoBehaviour
     public void DecreaseGameSpeed()
     {
         _currentGameSpeed *= _gameSpeedDecreaseMultipler;
+        _currentGameSpeed = Mathf.Min(MaxGameSpeed, _currentGameSpeed);
     }
 }
