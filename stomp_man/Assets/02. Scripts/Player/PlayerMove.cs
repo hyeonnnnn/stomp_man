@@ -101,6 +101,7 @@ public class PlayerMove : MonoBehaviour
         if (_isHit == false)
         {
             DecreaseBounceForce(_decreaseValue);
+
             GameManager.Instance.DecreaseGameSpeed();
         }
 
@@ -143,6 +144,8 @@ public class PlayerMove : MonoBehaviour
         }
 
         StartCoroutine(FlashHitColor());
+        Vector3 bloodPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, 0f);
+        EffectManager.Instance.PlayBloodEffect(bloodPosition);
     }
 
     private IEnumerator FlashHitColor()

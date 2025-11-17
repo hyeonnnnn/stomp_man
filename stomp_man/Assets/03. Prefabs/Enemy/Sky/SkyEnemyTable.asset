@@ -15,4 +15,7 @@ MonoBehaviour:
   enemys:
   - EnemyPrefab: {fileID: 2194230586850489333, guid: fbe40f2ee1e91cd4589d274fc6754016, type: 3}
     EnemyName: SkyEnemy
-    SpawnChance: 1
+    SpawnChance: 0.5
+  - EnemyPrefab: {fileID: 8663565903894403809, guid: 471bcd18d4a7a7340add88608c9b72ce, type: 3}
+    EnemyName: AngleEnemy
+    SpawnChance: 0.5

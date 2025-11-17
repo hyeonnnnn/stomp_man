@@ -62,6 +62,7 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateCurrentScoreUI()
     {
+        EffectManager.Instance.PlayScoreEffect(_currentScoreTextUI.transform.position);
         _currentScoreTextUI.text = $"Score: {_currentScore:N0}";
     }
 

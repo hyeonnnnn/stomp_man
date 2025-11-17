@@ -6,11 +6,13 @@ public class HealthComponent : MonoBehaviour
     private int _currentHealth;
 
     private ItemDrop _itemDrop;
+    private Enemy _enemy;
 
     private void Awake()
     {
         _currentHealth = _maxHealth;
         _itemDrop = GetComponent<ItemDrop>();
+        _enemy = GetComponent<Enemy>();
     }
 
     public void Damage(int damage)
@@ -27,6 +29,17 @@ public class HealthComponent : MonoBehaviour
     {
         _itemDrop.TryDropItem();
 
+        switch (_enemy.enemyType)
+        {
+            case EnemyType.Ground:
+                EffectManager.Instance.PlayExplosionEffect(transform.position);
+                break;
+
+            case EnemyType.Sky:
+                EffectManager.Instance.PlayLightEffect(transform.position);
+                break;
+        }
+        
         Destroy(gameObject);
     }
 

@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 2760330921904332704}
   - component: {fileID: 502381955196171319}
   - component: {fileID: 6320763160342428578}
+  - component: {fileID: 2568244406672575814}
   m_Layer: 0
   m_Name: LenternEnemy 1
   m_TagString: Enemy
@@ -248,3 +249,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &2568244406672575814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9195265643445105638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4b45e64c8f8de40bbed6f6cffdff4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: 0
