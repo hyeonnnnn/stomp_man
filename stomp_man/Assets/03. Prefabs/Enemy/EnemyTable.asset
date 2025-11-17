@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2257a4a37bb7454486dadb5a94850bb, type: 3}
   m_Name: EnemyTable
   m_EditorClassIdentifier: 
-  enemys: []
+  enemys:
+  - EnemyPrefab: {fileID: 5318324638666962011, guid: f1d28b54b10288f48a820fa90713cd94, type: 3}
+    EnemyName: NormalEnemy
+    SpawnChance: 0.7
+    Score: 10
+  - EnemyPrefab: {fileID: 5318324638666962011, guid: cd7b787a101af844e99aa62c88ddf4ed, type: 3}
+    EnemyName: DebuffEnemy
+    SpawnChance: 0.3
+    Score: 0
