@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 938484928545531692}
   - component: {fileID: 3332295904271242592}
   - component: {fileID: -168550117839831090}
-  - component: {fileID: -2791493523420574457}
   - component: {fileID: 1075781750529660705}
+  - component: {fileID: -5627074066392649710}
   m_Layer: 0
   m_Name: DebuffEnemy
   m_TagString: Enemy
@@ -145,19 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
---- !u!114 &-2791493523420574457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5318324638666962011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e151b6016bb32d44da2d5c69962b3fe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 0.5
 --- !u!61 &1075781750529660705
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -204,3 +191,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &-5627074066392649710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318324638666962011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d7272768cdae5428a1f2dffe9adb7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 1
