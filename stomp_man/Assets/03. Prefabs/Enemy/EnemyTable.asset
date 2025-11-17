@@ -15,9 +15,7 @@ MonoBehaviour:
   enemys:
   - EnemyPrefab: {fileID: 5318324638666962011, guid: f1d28b54b10288f48a820fa90713cd94, type: 3}
     EnemyName: NormalEnemy
-    SpawnChance: 0.7
-    Score: 10
+    SpawnChance: 0.95
   - EnemyPrefab: {fileID: 5318324638666962011, guid: cd7b787a101af844e99aa62c88ddf4ed, type: 3}
     EnemyName: DebuffEnemy
-    SpawnChance: 0.3
-    Score: 0
+    SpawnChance: 0.05

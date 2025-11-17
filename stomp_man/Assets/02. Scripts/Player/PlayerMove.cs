@@ -3,23 +3,24 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [Header("¹Ù¿î½º")]
-    [SerializeField] private float _startbounceForce = 3f;
+    [Header("ë°”ìš´ìŠ¤")]
+    [SerializeField] private float _startbounceForce = 8f;
+    [SerializeField] private float _maxBounceForce = 1.2f;
     [SerializeField] private float _minBounceForce = 0.2f;
     [SerializeField] private float _increaseValue = 1.2f;
     [SerializeField] private float _decreaseValue = 0.7f;
     private float _currentbounceForce = 3f;
 
-    [Header("½ºÅèÇÁ")]
+    [Header("ìŠ¤í†°í”„")]
     [SerializeField] private float _stompForce = 10f;
     private bool _isStomp = false;
     private bool _isHit = false;
     private bool _isDie = false;
 
-    [Header("µ¥¹ÌÁö")]
+    [Header("ë°ë¯¸ì§€")]
     [SerializeField] private int _damage = 1;
 
-    [Header("ÇÇ°İ ÀÌÆåÆ®")]
+    [Header("í”¼ê²© ì´í™íŠ¸")]
     [SerializeField] private float _hitFlashDuration = 0.1f;
     [SerializeField] private Color _hitFlashColor = Color.red;
     private SpriteRenderer _spriteRenderer;
@@ -59,7 +60,7 @@ public class PlayerMove : MonoBehaviour
 
         if (_isStomp == true)
         {
-            // Enemy 1È¸ Å¸°İ¸¸ ÆÇÁ¤
+            // Enemy 1íšŒ íƒ€ê²©ë§Œ íŒì •
             if (_isHit == true) return;
 
             _isHit = true;
@@ -80,7 +81,6 @@ public class PlayerMove : MonoBehaviour
         health.Damage(_damage);
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (_isDie == true) return;
@@ -99,20 +99,23 @@ public class PlayerMove : MonoBehaviour
 
     private void Bounce()
     {
+        Debug.Log(_currentbounceForce);
         _rigidbody.AddForce(Vector2.up * _currentbounceForce, ForceMode2D.Impulse);
     }
 
     public void IncreaseBounceForce(float value)
     {
-        Debug.Log("Á¡ÇÁ·Â Áõ°¡");
+        Debug.Log("ì í”„ë ¥ ì¦ê°€");
+        
         _currentbounceForce *= value;
+        // _currentbounceForce = Mathf.Min(_maxBounceForce, _currentbounceForce);
     }
 
     public void DecreaseBounceForce(float value)
     {
-        Debug.Log("Á¡ÇÁ·Â °¨¼Ò");
+        Debug.Log("ì í”„ë ¥ ê°ì†Œ");
         _currentbounceForce *= value;
-        _currentbounceForce = Mathf.Max(_minBounceForce, _currentbounceForce);
+        
 
         StartCoroutine(FlashHitColor());
 
@@ -134,7 +137,7 @@ public class PlayerMove : MonoBehaviour
         if (_isDie) return;
         _isDie = true;
 
-        Debug.Log("Á×¾ú½À´Ï´Ù.");
+        Debug.Log("ì£½ì—ˆìŠµë‹ˆë‹¤.");
     }
 
 }

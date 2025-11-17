@@ -9,7 +9,7 @@ public class DebuffComponent : MonoBehaviour
     {
         if(collision.CompareTag("Player") == true && collision.GetComponent<PlayerMove>().IsDie == false)
         {
-            collision.GetComponent<PlayerMove>().DecreaseBounceForce(_damage);
+            // collision.GetComponent<PlayerMove>().DecreaseBounceForce(_damage);
         }
     }
 }

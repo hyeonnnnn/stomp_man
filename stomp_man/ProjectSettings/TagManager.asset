@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - ScoreTarget
   layers:
   - Default
   - TransparentFX
@@ -45,6 +46,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3155549055
     locked: 0
   m_RenderingLayers:
   - Default
