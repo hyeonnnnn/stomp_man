@@ -5,8 +5,6 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] private int _maxHealth = 1;
     private int _currentHealth;
 
-    [SerializeField] private int _score;
-
     private ItemDrop _itemDrop;
 
     private void Awake()
@@ -27,8 +25,6 @@ public class HealthComponent : MonoBehaviour
 
     private void Die()
     {
-        ScoreManager.Instance.AddScore(_score);
-
         _itemDrop.TryDropItem();
 
         Destroy(gameObject);

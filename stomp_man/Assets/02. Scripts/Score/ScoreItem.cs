@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class ScoreItem : MonoBehaviour
 {
+    [Header("점수")]
+    [SerializeField] private int _score;
+
     [Header("아이템 이동")]
     [SerializeField] private float _flySpeed = 7f;
     [SerializeField] private float _coolTime = 2f;
@@ -81,6 +84,7 @@ public class ScoreItem : MonoBehaviour
         if (_curveProgression >= 1f)
         {
             _isFlying = false;
+            ScoreManager.Instance.AddScore(_score);
             Disappear();
         }
     }

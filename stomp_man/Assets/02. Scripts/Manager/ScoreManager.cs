@@ -41,7 +41,6 @@ public class ScoreManager : MonoBehaviour
 
     private void InitScore()
     {
-
         LoadBestScore();
         UpdateCurrentScoreUI();
         UpdateBestScoreUI();
