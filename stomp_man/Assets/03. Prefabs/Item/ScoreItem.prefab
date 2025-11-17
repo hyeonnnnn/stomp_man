@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 4723223492127242958}
   - component: {fileID: 1113034824073209158}
   - component: {fileID: 6647270863321516194}
+  - component: {fileID: 7436864597966159839}
   m_Layer: 0
-  m_Name: Item
+  m_Name: ScoreItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,3 +153,22 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &7436864597966159839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7052375206077259826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c41052b0a51abf47a33c92abc8e2585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flySpeed: 10
+  _coolTime: 1
+  _curveSpeedFactor: 10
+  _controlPointHeightMin: 2
+  _controlPointHeightValue: 4
+  _controlPointWidthMin: -2
+  _controlPointWidthMax: 2
