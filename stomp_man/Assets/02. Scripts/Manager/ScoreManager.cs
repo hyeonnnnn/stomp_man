@@ -9,7 +9,6 @@ public class ScoreManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI _currentScoreTextUI;
-    [SerializeField] private TextMeshProUGUI _BestScoreTextUI;
 
     private int _currentScore;
     private int _bestScore;
@@ -43,7 +42,6 @@ public class ScoreManager : MonoBehaviour
     {
         LoadBestScore();
         UpdateCurrentScoreUI();
-        UpdateBestScoreUI();
     }
 
     private void LoadBestScore()
@@ -63,7 +61,7 @@ public class ScoreManager : MonoBehaviour
     private void UpdateCurrentScoreUI()
     {
         EffectManager.Instance.PlayScoreEffect(_currentScoreTextUI.transform.position);
-        _currentScoreTextUI.text = $"Score: {_currentScore:N0}";
+        _currentScoreTextUI.text = $"{_currentScore:N0}";
     }
 
     private void UpdateBestScore()
@@ -72,13 +70,7 @@ public class ScoreManager : MonoBehaviour
         {
             _bestScore = _currentScore;
             SaveBestScore();
-            UpdateBestScoreUI();
         }
-    }
-
-    private void UpdateBestScoreUI()
-    {
-        _BestScoreTextUI.text = $"Best Score: {_bestScore:N0}";
     }
 
     private void SaveBestScore()

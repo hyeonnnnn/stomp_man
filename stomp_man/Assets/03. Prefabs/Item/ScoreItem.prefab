@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -105171899, guid: 681e7e53eb6b2464796a3b703bbcd396, type: 3}
+  m_Sprite: {fileID: -2113854725, guid: 681e7e53eb6b2464796a3b703bbcd396, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c41052b0a51abf47a33c92abc8e2585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 5000
+  _score: 400
   _flySpeed: 10
   _coolTime: 1
   _curveSpeedFactor: 10
@@ -250,7 +250,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.79215693, g: 0.027450982, b: 0.49803925, a: 0.5882353}
+      key0: {r: 0.13725491, g: 0.654902, b: 0.8196079, a: 0.5882353}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

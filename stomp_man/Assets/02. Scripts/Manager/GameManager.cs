@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,11 +8,15 @@ public class GameManager : MonoBehaviour
 
     private float _gameStartSpeed = 15f;
     private float _currentGameSpeed;
+    private float _minGameSpeed = 0.2f;
     private float _gameSpeedIncreaseValue = 0.1f;
     private float _gameSpeedIncreaseMultipler = 1.15f;
     private float _gameSpeedDecreaseMultipler = 0.6f;
     private float _timer = 0f;
     [SerializeField] private float _coolTime = 1f;
+
+    private bool _isGameOver = false;
+    public bool IsGameOver => _isGameOver;
 
 
     public float CurrentGameSpeed => _currentGameSpeed;
@@ -36,6 +41,16 @@ public class GameManager : MonoBehaviour
         {
             _currentGameSpeed += _gameSpeedIncreaseValue;
             _timer = 0;
+        }
+
+        if (_currentGameSpeed < _minGameSpeed)
+        {
+            _isGameOver = true;
+        }
+
+        if (_isGameOver == true)
+        {
+            PanelManager.Instance.ShowGameOverPanel();
         }
     }
 

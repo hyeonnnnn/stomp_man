@@ -22,6 +22,13 @@ public class CameraShake : MonoBehaviour
 
         while (timer < _shakeTime)
         {
+
+            if (GameManager.Instance.IsGameOver == true)
+            {
+                transform.localPosition = _originalLocalPos;
+                yield break;
+            }
+
             Vector2 offset = Random.insideUnitCircle * shakeAmount;
 
             transform.localPosition = _originalLocalPos + new Vector3(offset.x, offset.y, 0);
