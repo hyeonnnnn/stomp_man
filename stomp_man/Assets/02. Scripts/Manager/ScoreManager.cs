@@ -13,6 +13,9 @@ public class ScoreManager : MonoBehaviour
     private int _currentScore;
     private int _bestScore;
 
+    public int CurrentScore => _currentScore;
+    public int BestScore => _bestScore;
+
     private void Awake()
     {
         if(_instance != null)

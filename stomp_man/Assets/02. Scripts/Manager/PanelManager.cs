@@ -6,9 +6,9 @@ public class PanelManager : MonoBehaviour
     private static PanelManager _instance = null;
     public static PanelManager Instance => _instance;
 
-    [SerializeField] private GameObject _gameStartPanel;
-    [SerializeField] private GameObject _mainPanel;
-    [SerializeField] private GameObject _gameOvertPanel;
+    [SerializeField] private GameObject _HomeUI;
+    [SerializeField] private GameObject _mainPanelUI;
+    [SerializeField] private GameObject _gameOvertPanelUI;
 
     private void Awake()
     {
@@ -20,30 +20,30 @@ public class PanelManager : MonoBehaviour
         _instance = this;
     }
 
-    public void ShowGameStartPanel()
+    public void ShowHomePanel()
     {
         HideAll();
-        _gameStartPanel.SetActive(true);
+        _HomeUI.SetActive(true);
     }
 
     public void ShowMainPanel()
     {
         HideAll();
         Time.timeScale = 1;
-        _mainPanel.SetActive(true);
+        _mainPanelUI.SetActive(true);
     }
 
     public void ShowGameOverPanel()
     {
         HideAll();
         Time.timeScale = 0;
-        _gameOvertPanel.SetActive(true);
+        _gameOvertPanelUI.SetActive(true);
     }
 
     private void HideAll()
     {
-        _gameStartPanel.SetActive(false);
-        _mainPanel.SetActive(false);
-        _gameOvertPanel.SetActive(false);
+        _HomeUI.SetActive(false);
+        _mainPanelUI.SetActive(false);
+        _gameOvertPanelUI.SetActive(false);
     }
 }
