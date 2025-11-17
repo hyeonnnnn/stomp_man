@@ -71,7 +71,6 @@ public class PlayerMove : MonoBehaviour
 
         if (_isStomp == true)
         {
-            // Enemy 1회 타격만 판정
             if (_isHit == true) return;
 
             _isHit = true;

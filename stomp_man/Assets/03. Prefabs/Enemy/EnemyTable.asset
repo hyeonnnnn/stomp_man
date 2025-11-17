@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: EnemyTable
   m_EditorClassIdentifier: 
   enemys:
-  - EnemyPrefab: {fileID: 5318324638666962011, guid: f1d28b54b10288f48a820fa90713cd94, type: 3}
-    EnemyName: NormalEnemy
-    SpawnChance: 0.95
-  - EnemyPrefab: {fileID: 5318324638666962011, guid: cd7b787a101af844e99aa62c88ddf4ed, type: 3}
-    EnemyName: DebuffEnemy
-    SpawnChance: 0.05
+  - EnemyPrefab: {fileID: 9195265643445105638, guid: ec512b3610cf40e4ca1a42231ce1f0b8, type: 3}
+    EnemyName: LenternEnemy
+    SpawnChance: 0.8
+  - EnemyPrefab: {fileID: 7078538921020063062, guid: d947467ea3ea0024097c704b187adb7a, type: 3}
+    EnemyName: IceKingEnemy
+    SpawnChance: 0.2
