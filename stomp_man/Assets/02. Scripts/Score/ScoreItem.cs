@@ -25,16 +25,20 @@ public class ScoreItem : MonoBehaviour
     private float _timer = 0f;
     private bool _isFlying = false;
 
+    private GameSpeedController _speed;
+
+
     private void Awake()
     {
         _target = GameObject.FindWithTag("ScoreTarget");
+        _speed = FindFirstObjectByType<GameSpeedController>();
     }
 
     private void Update()
     {
         if (_isFlying == false)
         {
-            transform.Translate(Vector3.left * GameManager.Instance.CurrentGameSpeed * Time.deltaTime);
+            transform.Translate(Vector3.left * _speed.CurrentSpeed * Time.deltaTime);
         }
 
         _timer += Time.deltaTime;

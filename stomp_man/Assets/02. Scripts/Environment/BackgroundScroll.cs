@@ -17,16 +17,19 @@ public class BackgroundScroll : MonoBehaviour
     [SerializeField] private float _backgroundSpeed = 0.5f;
     [SerializeField] private float _particleSpeed = 0.2f;
 
+    private GameSpeedController _speed;
+
     private float _spriteWidth;
 
     private void Awake()
     {
         _spriteWidth = _foreground[0].GetComponent<SpriteRenderer>().bounds.size.x;
+        _speed = FindFirstObjectByType<GameSpeedController>();
     }
 
     private void Update()
     {
-        float speedMultiplier = GameManager.Instance.CurrentGameSpeed;
+        float speedMultiplier = _speed.CurrentSpeed;
 
         MoveLayer(_foreground, _foregroundSpeed * speedMultiplier);
         MoveLayer(_midground, _midgroundSpeed * speedMultiplier);

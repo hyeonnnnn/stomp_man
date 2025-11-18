@@ -1,77 +1,44 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager _instance;
-    public static GameManager Instance => _instance;
+    public static GameManager Instance { get; private set; }
 
-    private float _gameStartSpeed = 20f;
-    private float _currentGameSpeed;
-    private float _minGameSpeed = 0.2f;
-    private float _maxGameSpeed = 40f;
-    private float _gameSpeedIncreaseValue = 0.1f;
-    private float _gameSpeedIncreaseMultipler = 1.15f;
-    private float _gameSpeedDecreaseMultipler = 0.6f;
-    private float _timer = 0f;
-    [SerializeField] private float _coolTime = 1f;
-
-    private bool _isGameOver = false;
-    public bool IsGameOver => _isGameOver;
-    public float MaxGameSpeed => _maxGameSpeed;
-    private bool _isOpenGameOverPanel = false;
-
-    public float CurrentGameSpeed => _currentGameSpeed;
+    private GameSpeedController _speed;
+    private GameStateController _state;
 
     private void Awake()
     {
-        if(_instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
         }
-        _instance = this;
+        Instance = this;
 
-        _currentGameSpeed = _gameStartSpeed;
+        _speed = GetComponent<GameSpeedController>();
+        _state = GetComponent<GameStateController>();
     }
 
     private void Start()
     {
-        Time.timeScale = 0;
+        PauseGame();
     }
 
-
-    public void Update()
+    public void StartGame()
     {
-        _timer += Time.deltaTime;
-
-        if (_timer > _coolTime)
-        {
-            _currentGameSpeed += _gameSpeedIncreaseValue;
-            _timer = 0;
-        }
-
-        if (_currentGameSpeed < _minGameSpeed)
-        {
-            _isGameOver = true;
-        }
-
-        if (_isGameOver == true && _isOpenGameOverPanel == false)
-        {
-            _isOpenGameOverPanel = true;
-            SoundManager.Instance.PlaySFX(SoundManager.Sfx.GAMEOVER);
-            PanelManager.Instance.ShowGameOverPanel();
-        }
+        ResumeGame();
+        _speed.ResetSpeed();
+        _state.ResetState();
     }
 
-    public void IncreaseGameSpeed()
+    public void PauseGame()
     {
-        _currentGameSpeed *= _gameSpeedIncreaseMultipler;
-        _currentGameSpeed = Mathf.Min(MaxGameSpeed, _currentGameSpeed);
+        Time.timeScale = 0f;
     }
 
-    public void DecreaseGameSpeed()
+    public void ResumeGame()
     {
-        _currentGameSpeed *= _gameSpeedDecreaseMultipler;
+        Time.timeScale = 1f;
     }
 }

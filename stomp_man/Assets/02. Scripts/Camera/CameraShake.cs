@@ -7,6 +7,12 @@ public class CameraShake : MonoBehaviour
 
     private Vector3 _originalLocalPos;
 
+    private GameStateController _state;
+
+    private void Awake()
+    {
+        _state = FindFirstObjectByType<GameStateController>();
+    }
 
     public void Play(float shakeAmount)
     {
@@ -22,8 +28,7 @@ public class CameraShake : MonoBehaviour
 
         while (timer < _shakeTime)
         {
-
-            if (GameManager.Instance.IsGameOver == true)
+            if (_state.IsGameOver == true)
             {
                 transform.localPosition = _originalLocalPos;
                 yield break;
