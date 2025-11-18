@@ -1128,7 +1128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3293473904937343243, guid: 12ff47cbb6a9b60469a226c7501a73ef, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.2
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 3293473904937343243, guid: 12ff47cbb6a9b60469a226c7501a73ef, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1136,7 +1136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3293473904937343243, guid: 12ff47cbb6a9b60469a226c7501a73ef, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.2
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 3293473904937343243, guid: 12ff47cbb6a9b60469a226c7501a73ef, type: 3}
       propertyPath: m_SizeDelta.x
@@ -5356,7 +5356,7 @@ RectTransform:
   m_GameObject: {fileID: 1507507592}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 732148037}
@@ -5855,9 +5855,9 @@ Transform:
   m_GameObject: {fileID: 1577615384}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -2.038, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0, y: -1.844, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5873,11 +5873,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda02999c16489a448431417542e16e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startbounceForce: 8
-  _maxBounceForce: 9
+  _startbounceForce: 11
+  _maxBounceForce: 11
   _minBounceForce: 0.2
-  _increaseValue: 1.2
-  _decreaseValue: 0.8
+  _increaseValue: 1.3
+  _decreaseValue: 0.85
   _smallShakeValue: 0.5
   _bigShakeValue: 1.6
   _stompForce: 30
@@ -7174,7 +7174,7 @@ RectTransform:
   m_GameObject: {fileID: 2028065330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 74304166}
