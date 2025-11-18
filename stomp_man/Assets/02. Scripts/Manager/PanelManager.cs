@@ -22,6 +22,7 @@ public class PanelManager : MonoBehaviour
 
     public void ShowHomePanel()
     {
+        Debug.Log("ShowHomePanel");
         HideAll();
         Time.timeScale = 0;
         _HomeUI.SetActive(true);
@@ -29,6 +30,7 @@ public class PanelManager : MonoBehaviour
 
     public void ShowMainPanel()
     {
+        Debug.Log("ShowMainPanel");
         HideAll();
         Time.timeScale = 1;
         _mainPanelUI.SetActive(true);

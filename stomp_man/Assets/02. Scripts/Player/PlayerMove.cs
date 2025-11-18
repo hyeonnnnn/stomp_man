@@ -33,7 +33,6 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] private Animator _animator;
 
-
     private Camera _camera;
 
     private Rigidbody2D _rigidbody;
@@ -50,6 +49,11 @@ public class PlayerMove : MonoBehaviour
 
         _camera = Camera.main;
         _shakeValue = _smallShakeValue;
+    }
+
+    private void Start()
+    {
+        _rigidbody.AddForce(Vector3.up * _currentbounceForce, ForceMode2D.Impulse);
     }
 
     private void Update()
