@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class ScoreItem : MonoBehaviour
 {
     [Header("Á¡¼ö")]
@@ -16,6 +17,7 @@ public class ScoreItem : MonoBehaviour
     [SerializeField] private float _controlPointHeightValue = 4f;
     [SerializeField] private float _controlPointWidthMin = -2f;
     [SerializeField] private float _controlPointWidthMax = 2f;
+
 
     private Vector2 _startPoint;
     private Vector2 _controlPoint;
@@ -94,4 +96,6 @@ public class ScoreItem : MonoBehaviour
             Disappear();
         }
     }
+
+
 }

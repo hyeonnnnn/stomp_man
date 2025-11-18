@@ -1,6 +1,6 @@
-using UnityEngine;
-using UnityEngine.UI;
+using DG.Tweening;
 using TMPro;
+using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -9,6 +9,11 @@ public class ScoreManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI _currentScoreTextUI;
+    [SerializeField] private GameObject _jemIcon;
+
+    private float _imageEffectScale = 1.5f;
+    private float _imageEffectDuration = 0.2f;
+    private float _imageEffectReturnDuration = 0.5f;
 
     private int _currentScore;
     private int _bestScore;
@@ -34,6 +39,7 @@ public class ScoreManager : MonoBehaviour
 
         UpdateCurrentScoreUI();
         UpdateBestScore();
+        IconEffect();
     }
 
     private void Start()
@@ -79,5 +85,17 @@ public class ScoreManager : MonoBehaviour
     private void SaveBestScore()
     {
         SaveManager.Instance.Save(_bestScore);
+    }
+
+    private void IconEffect()
+    {
+        if (_jemIcon == null) return;
+
+        _jemIcon.transform.DOKill();
+        _jemIcon.transform.DOScale(_imageEffectScale, _imageEffectDuration).OnComplete(() =>
+        {
+            _jemIcon.transform.DOScale(1f, _imageEffectReturnDuration);
+        });
+
     }
 }

@@ -15,7 +15,10 @@ MonoBehaviour:
   enemys:
   - EnemyPrefab: {fileID: 9195265643445105638, guid: ec512b3610cf40e4ca1a42231ce1f0b8, type: 3}
     EnemyName: LenternEnemy
-    SpawnChance: 0.8
+    SpawnChance: 0.5
   - EnemyPrefab: {fileID: 7078538921020063062, guid: d947467ea3ea0024097c704b187adb7a, type: 3}
     EnemyName: IceKingEnemy
     SpawnChance: 0.2
+  - EnemyPrefab: {fileID: 6932039604964914456, guid: cb226a1a5d34e0b4fa8d99686bc8ba5e, type: 3}
+    EnemyName: SkelletonEnemy
+    SpawnChance: 0.3
