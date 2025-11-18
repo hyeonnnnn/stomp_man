@@ -4,9 +4,6 @@ using UnityEngine.UI;
 
 public class GameOverPanel : MonoBehaviour
 {
-    [SerializeField] private Button _retryButtonUI;
-    [SerializeField] private Button _homeButtonUI;
-
     [SerializeField] private TextMeshProUGUI _currentScoreTextUI;
     [SerializeField] private TextMeshProUGUI _bestScoreTextUI;
 
@@ -15,16 +12,6 @@ public class GameOverPanel : MonoBehaviour
         ShowCurrentScore();
         ShowBestSocre();
 
-    }
-
-    public void Retry()
-    {
-        PanelManager.Instance.ShowMainPanel();
-    }
-
-    public void GoHome()
-    {
-        PanelManager.Instance.ShowHomePanel();
     }
 
     public void ShowCurrentScore()

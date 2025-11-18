@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class PanelManager : MonoBehaviour
@@ -20,19 +21,19 @@ public class PanelManager : MonoBehaviour
         _instance = this;
     }
 
-    public void ShowHomePanel()
-    {
-        Debug.Log("ShowHomePanel");
-        HideAll();
-        Time.timeScale = 0;
-        _HomeUI.SetActive(true);
-    }
+    //public void ShowHomePanel()
+    //{
+    //    HideAll();
+    //    Time.timeScale = 0;
+        
+    //    _HomeUI.SetActive(true);
+    //}
 
     public void ShowMainPanel()
     {
-        Debug.Log("ShowMainPanel");
         HideAll();
         Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         _mainPanelUI.SetActive(true);
     }
 
@@ -45,6 +46,7 @@ public class PanelManager : MonoBehaviour
 
     private void HideAll()
     {
+        Debug.Log("Hide All");
         _HomeUI.SetActive(false);
         _mainPanelUI.SetActive(false);
         _gameOvertPanelUI.SetActive(false);

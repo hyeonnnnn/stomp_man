@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     private bool _isGameOver = false;
     public bool IsGameOver => _isGameOver;
     public float MaxGameSpeed => _maxGameSpeed;
-
+    private bool _isOpenGameOverPanel = false;
 
     public float CurrentGameSpeed => _currentGameSpeed;
 
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        PanelManager.Instance.ShowHomePanel();
+        // PanelManager.Instance.ShowHomePanel();
     }
 
     public void Update()
@@ -55,8 +55,9 @@ public class GameManager : MonoBehaviour
             _isGameOver = true;
         }
 
-        if (_isGameOver == true)
+        if (_isGameOver == true && _isOpenGameOverPanel == false)
         {
+            _isOpenGameOverPanel = true;
             PanelManager.Instance.ShowGameOverPanel();
         }
     }
