@@ -50,6 +50,7 @@ public class ScoreItem : MonoBehaviour
 
     protected void Disappear()
     {
+        SoundManager.Instance.PlaySFX(SoundManager.Sfx.ITEMPICKUP);
         Destroy(gameObject);
     }
 

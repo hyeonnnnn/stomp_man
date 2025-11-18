@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
         if (_isGameOver == true && _isOpenGameOverPanel == false)
         {
             _isOpenGameOverPanel = true;
+            SoundManager.Instance.PlaySFX(SoundManager.Sfx.GAMEOVER);
             PanelManager.Instance.ShowGameOverPanel();
         }
     }

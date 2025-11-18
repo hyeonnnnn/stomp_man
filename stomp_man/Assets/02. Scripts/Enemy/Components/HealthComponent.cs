@@ -39,7 +39,7 @@ public class HealthComponent : MonoBehaviour
                 EffectManager.Instance.PlayLightEffect(transform.position);
                 break;
         }
-        
+        SoundManager.Instance.PlaySFX(SoundManager.Sfx.ENEMYEXPLOSION);
         Destroy(gameObject);
     }
 

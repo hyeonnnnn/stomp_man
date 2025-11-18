@@ -136,6 +136,7 @@ public class PlayerMove : MonoBehaviour
 
         _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, 0f);
         _rigidbody.AddForce(Vector2.up * _currentbounceForce, ForceMode2D.Impulse);
+        SoundManager.Instance.PlaySFX(SoundManager.Sfx.STOMP);
         _animator.SetTrigger("Jump");
     }
 
