@@ -7,7 +7,6 @@ public class PanelManager : MonoBehaviour
     private static PanelManager _instance = null;
     public static PanelManager Instance => _instance;
 
-    [SerializeField] private GameObject _HomeUI;
     [SerializeField] private GameObject _mainPanelUI;
     [SerializeField] private GameObject _gameOvertPanelUI;
 
@@ -20,14 +19,6 @@ public class PanelManager : MonoBehaviour
         }
         _instance = this;
     }
-
-    //public void ShowHomePanel()
-    //{
-    //    HideAll();
-    //    Time.timeScale = 0;
-        
-    //    _HomeUI.SetActive(true);
-    //}
 
     public void ShowMainPanel()
     {
@@ -46,8 +37,6 @@ public class PanelManager : MonoBehaviour
 
     private void HideAll()
     {
-        Debug.Log("Hide All");
-        _HomeUI.SetActive(false);
         _mainPanelUI.SetActive(false);
         _gameOvertPanelUI.SetActive(false);
     }

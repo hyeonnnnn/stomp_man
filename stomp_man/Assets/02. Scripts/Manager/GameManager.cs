@@ -37,8 +37,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        // PanelManager.Instance.ShowHomePanel();
+        Time.timeScale = 0;
     }
+
 
     public void Update()
     {

@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class ReadyPanel : MonoBehaviour
 {
+    [SerializeField] private Button _gameStartButtonUI;
     [SerializeField] private TextMeshProUGUI _countDownTextUI;
     [SerializeField] private GameObject _gameStartTextUI;
     private float _term = 1;
 
-    private void OnEnable()
+    public void StartGame()
     {
         Time.timeScale = 0f;
         StartCoroutine(CountDown());
@@ -27,6 +28,7 @@ public class ReadyPanel : MonoBehaviour
         }
 
         _gameStartTextUI.SetActive(true);
+        _gameStartButtonUI.gameObject.SetActive(false);
         yield return new WaitForSecondsRealtime(_term);
         _gameStartTextUI.SetActive(false);
 
