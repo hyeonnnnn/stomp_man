@@ -35,6 +35,11 @@ public class GameManager : MonoBehaviour
         _currentGameSpeed = _gameStartSpeed;
     }
 
+    private void Start()
+    {
+        PanelManager.Instance.ShowHomePanel();
+    }
+
     public void Update()
     {
         _timer += Time.deltaTime;

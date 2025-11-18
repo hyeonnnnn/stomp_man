@@ -23,6 +23,7 @@ public class PanelManager : MonoBehaviour
     public void ShowHomePanel()
     {
         HideAll();
+        Time.timeScale = 0;
         _HomeUI.SetActive(true);
     }
 

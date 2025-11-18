@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _score: 150
-  _flySpeed: 10
+  _flySpeed: 7
   _coolTime: 1
   _curveSpeedFactor: 10
   _controlPointHeightMin: 2
