@@ -7,8 +7,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float _startbounceForce = 5f;
     [SerializeField] private float _maxBounceForce = 8f;
     [SerializeField] private float _minBounceForce = 0.2f;
-    [SerializeField] private float _increaseValue = 1.2f;
-    [SerializeField] private float _decreaseValue = 0.7f;
+    [SerializeField] private float _increaseValue = 5f;
+    [SerializeField] private float _decreaseValue = 7f;
     private float _currentbounceForce = 3f;
 
     [Header("카메라 흔들기 값")]
@@ -54,6 +54,9 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         _rigidbody.AddForce(Vector3.up * _currentbounceForce, ForceMode2D.Impulse);
+
+        _increaseValue = GameManager.Instance.GameSpeedIncrease;
+        _decreaseValue = GameManager.Instance.GameSpeedDecrease;
     }
 
     private void Update()
@@ -149,12 +152,15 @@ public class PlayerMove : MonoBehaviour
     public void DecreaseBounceForce(float value)
     {
         _currentbounceForce *= value;
-        
+
+        Debug.Log(_currentbounceForce);
         if (_currentbounceForce <= _minBounceForce)
         {
             _currentbounceForce = _minBounceForce;
             Die();
+            Debug.Log("죽음");
         }
+
 
         StartCoroutine(FlashHitColor());
         Vector3 bloodPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, 0f);
@@ -172,9 +178,12 @@ public class PlayerMove : MonoBehaviour
     {
         if (_isDie) return;
         _isDie = true;
+
         _animator.SetTrigger("Idle");
         _animator.ResetTrigger("Stomp");
         _animator.ResetTrigger("Jump");
+
+        GameManager.Instance.IsGameOver = true;
         Destroy(gameObject);
     }
 

@@ -8,16 +8,15 @@ public class GameManager : MonoBehaviour
 
     private float _gameStartSpeed = 20f;
     private float _currentGameSpeed;
-    private float _minGameSpeed = 0.2f;
+    private float _minGameSpeed = 1f;
     private float _maxGameSpeed = 40f;
     private float _gameSpeedIncreaseValue = 0.1f;
-    private float _gameSpeedIncreaseMultipler = 1.15f;
-    private float _gameSpeedDecreaseMultipler = 0.6f;
+    public float GameSpeedIncrease = 5f;
+    public float GameSpeedDecrease = 7f;
     private float _timer = 0f;
     [SerializeField] private float _coolTime = 1f;
 
-    private bool _isGameOver = false;
-    public bool IsGameOver => _isGameOver;
+    public bool IsGameOver = false;
     public float MaxGameSpeed => _maxGameSpeed;
     private bool _isOpenGameOverPanel = false;
 
@@ -51,12 +50,12 @@ public class GameManager : MonoBehaviour
             _timer = 0;
         }
 
-        if (_currentGameSpeed < _minGameSpeed)
+        if (_currentGameSpeed <= _minGameSpeed)
         {
-            _isGameOver = true;
+            IsGameOver = true;
         }
 
-        if (_isGameOver == true && _isOpenGameOverPanel == false)
+        if (IsGameOver == true && _isOpenGameOverPanel == false)
         {
             _isOpenGameOverPanel = true;
             SoundManager.Instance.PlaySFX(SoundManager.Sfx.GAMEOVER);
@@ -66,12 +65,12 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseGameSpeed()
     {
-        _currentGameSpeed *= _gameSpeedIncreaseMultipler;
+        _currentGameSpeed *= GameSpeedIncrease;
         _currentGameSpeed = Mathf.Min(MaxGameSpeed, _currentGameSpeed);
     }
 
     public void DecreaseGameSpeed()
     {
-        _currentGameSpeed *= _gameSpeedDecreaseMultipler;
+        _currentGameSpeed *= GameSpeedDecrease;
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7436864597966159839}
   - component: {fileID: 768812743051533026}
   m_Layer: 0
-  m_Name: ScoreItem2
+  m_Name: ScoreItem3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1089414728, guid: 681e7e53eb6b2464796a3b703bbcd396, type: 3}
+  m_Sprite: {fileID: 1901870866, guid: 681e7e53eb6b2464796a3b703bbcd396, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -250,7 +250,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.20392159, g: 0.14509805, b: 0.56078434, a: 1}
+      key0: {r: 0.9960785, g: 0.7254902, b: 0.75294125, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

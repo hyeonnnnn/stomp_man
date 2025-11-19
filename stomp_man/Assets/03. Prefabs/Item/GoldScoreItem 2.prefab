@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1113034824073209158}
   - component: {fileID: 6647270863321516194}
   - component: {fileID: 7436864597966159839}
-  - component: {fileID: 768812743051533026}
+  - component: {fileID: 2641731100293953441}
   m_Layer: 0
-  m_Name: ScoreItem2
+  m_Name: GoldScoreItem 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1089414728, guid: 681e7e53eb6b2464796a3b703bbcd396, type: 3}
+  m_Sprite: {fileID: -328383888, guid: d7364ae6b5653e2458b9784a8266e4ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c41052b0a51abf47a33c92abc8e2585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 2000
+  _score: 4000
   _flySpeed: 7
   _coolTime: 1
   _curveSpeedFactor: 10
@@ -174,7 +174,7 @@ MonoBehaviour:
   _controlPointHeightValue: 4
   _controlPointWidthMin: -2
   _controlPointWidthMax: 2
---- !u!96 &768812743051533026
+--- !u!96 &2641731100293953441
 TrailRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5000038
+        value: 0.50000954
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -250,9 +250,9 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.20392159, g: 0.14509805, b: 0.56078434, a: 1}
+      key0: {r: 0.9960785, g: 0.8941177, b: 0.60784316, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0}
-      key2: {r: 1, g: 1, b: 1, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -260,7 +260,7 @@ TrailRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 65535
+      ctime2: 0
       ctime3: 0
       ctime4: 0
       ctime5: 0

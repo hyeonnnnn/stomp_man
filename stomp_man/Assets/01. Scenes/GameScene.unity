@@ -466,7 +466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2348483820027361704, guid: 8f7a1b78e5aaffc439719c9139755107, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 40
+      value: 41.7
       objectReference: {fileID: 0}
     - target: {fileID: 2348483820027361704, guid: 8f7a1b78e5aaffc439719c9139755107, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -2780,7 +2780,7 @@ Transform:
   m_GameObject: {fileID: 780169479}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 9.69, z: 0}
+  m_LocalPosition: {x: 10, y: 10.664, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5873,11 +5873,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda02999c16489a448431417542e16e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startbounceForce: 11
+  _startbounceForce: 10
   _maxBounceForce: 11
   _minBounceForce: 0.2
-  _increaseValue: 1.3
-  _decreaseValue: 0.85
+  _increaseValue: 5
+  _decreaseValue: 7
   _smallShakeValue: 0.5
   _bigShakeValue: 1.6
   _stompForce: 30
@@ -6696,7 +6696,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 300bd6c422943734ca3676ef72b11259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameSpeedIncrease: 1.2
+  GameSpeedDecrease: 0.6
   _coolTime: 1
+  IsGameOver: 0
 --- !u!1 &1933075014
 GameObject:
   m_ObjectHideFlags: 0
