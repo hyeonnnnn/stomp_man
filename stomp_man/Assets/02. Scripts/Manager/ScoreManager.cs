@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _currentScoreTextUI;
     [SerializeField] private GameObject _jemIcon;
 
-    private float _imageEffectScale = 1.5f;
+    private float _imageEffectScale = 1.9f;
     private float _imageEffectDuration = 0.2f;
     private float _imageEffectReturnDuration = 0.5f;
 

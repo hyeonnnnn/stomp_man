@@ -322,11 +322,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2348483818978775593, guid: 8f7a1b78e5aaffc439719c9139755107, type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2348483818978775593, guid: 8f7a1b78e5aaffc439719c9139755107, type: 3}
       propertyPath: m_fontSizeBase
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2348483818978775594, guid: 8f7a1b78e5aaffc439719c9139755107, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2800,7 +2800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyTable: {fileID: 11400000, guid: 17b83a18da619994e8863502c8e80516, type: 2}
   _minSpawnInterval: 0.5
-  _maxSpawnInterval: 2
+  _maxSpawnInterval: 1.5
 --- !u!1 &797956146
 GameObject:
   m_ObjectHideFlags: 0
@@ -5875,7 +5875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startbounceForce: 10
   _maxBounceForce: 11
-  _minBounceForce: 0.2
+  _minBounceForce: 0.4
   _increaseValue: 5
   _decreaseValue: 7
   _smallShakeValue: 0.5
@@ -6395,7 +6395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyTable: {fileID: 11400000, guid: 9f12370e285002e48ad1245ee8a46429, type: 2}
   _minSpawnInterval: 0.2
-  _maxSpawnInterval: 1
+  _maxSpawnInterval: 0.9
 --- !u!1 &1838525523
 GameObject:
   m_ObjectHideFlags: 0
@@ -6573,7 +6573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press SPACE to jump!
+  m_text: Press Space to STOMP!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 162f7f16c4bec41ff98f811bd90e7b6e, type: 2}
   m_sharedMaterial: {fileID: 6447333859754382329, guid: 162f7f16c4bec41ff98f811bd90e7b6e, type: 2}

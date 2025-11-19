@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
     [Header("바운스")]
     [SerializeField] private float _startbounceForce = 5f;
     [SerializeField] private float _maxBounceForce = 8f;
-    [SerializeField] private float _minBounceForce = 0.2f;
+    [SerializeField] private float _minBounceForce = 0.4f;
     [SerializeField] private float _increaseValue = 5f;
     [SerializeField] private float _decreaseValue = 7f;
     private float _currentbounceForce = 3f;
